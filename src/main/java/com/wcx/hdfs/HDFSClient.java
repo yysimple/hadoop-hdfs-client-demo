@@ -132,6 +132,29 @@ public class HDFSClient {
         fs.close();
     }
 
+    @Test
+    public void testListStatus() throws IOException, InterruptedException, URISyntaxException {
+
+        FileSystem fs = getFS();
+
+        // 2 判断是文件还是文件夹
+        FileStatus[] listStatus = fs.listStatus(new Path("/"));
+
+        for (FileStatus fileStatus : listStatus) {
+
+            // 如果是文件
+            if (fileStatus.isFile()) {
+                System.out.println("f:" + fileStatus.getPath().getName());
+            } else {
+                System.out.println("d:" + fileStatus.getPath().getName());
+            }
+        }
+
+        // 3 关闭资源
+        fs.close();
+    }
+
+
     /**
      * 获取hadoop的连接  root用户
      *
