@@ -24,8 +24,8 @@ public class FlowBeanDriver {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
         // 指定自定义分区
-        job.setPartitionerClass(ProvincePartitioner.class);
-        job.setNumReduceTasks(5);
+//        job.setPartitionerClass(ProvincePartitioner.class);
+//        job.setNumReduceTasks(5);
         job.setJarByClass(FlowBeanDriver.class);
         job.setMapperClass(FlowBeanMapper.class);
         job.setReducerClass(FlowBeanReducer.class);
