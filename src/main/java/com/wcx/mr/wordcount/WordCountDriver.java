@@ -20,12 +20,16 @@ import java.io.IOException;
  **/
 public class WordCountDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+        args = new String[]{"E:\\test\\hadoop\\wordcount\\input", "E:\\test\\hadoop\\wordcount\\output"};
         Configuration conf = new Configuration();
         // 1. 获取job对象
         Job job = Job.getInstance(conf);
 
         // 2. 设置jar存储位置
         job.setJarByClass(WordCountDriver.class);
+
+        // 指定需要使用combiner，以及用哪个类作为combiner的逻辑
+        job.setCombinerClass(WordCountCombiner.class);
 
         // 3. 关联Map和Reduce类
         job.setMapperClass(WordCountMapper.class);
