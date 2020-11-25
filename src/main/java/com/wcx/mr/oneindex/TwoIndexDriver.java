@@ -20,7 +20,7 @@ import java.io.IOException;
 public class TwoIndexDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         // 输入输出路径需要根据自己电脑上实际的输入输出路径设置
-        args = new String[] { "E:\\test\\hadoop\\oneindex\\output", "E:\\test\\hadoop\\oneindex\\output2" };
+        args = new String[]{"E:\\test\\hadoop\\oneindex\\output", "E:\\test\\hadoop\\oneindex\\output2"};
 
         Configuration config = new Configuration();
         Job job = Job.getInstance(config);
@@ -39,7 +39,7 @@ public class TwoIndexDriver {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         boolean result = job.waitForCompletion(true);
-        System.exit(result?0:1);
+        System.exit(result ? 0 : 1);
 
     }
 }
