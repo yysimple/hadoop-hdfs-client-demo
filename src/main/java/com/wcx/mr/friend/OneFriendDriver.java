@@ -44,9 +44,9 @@ public class OneFriendDriver {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         // 7 提交
-        boolean result = job.waitForCompletion(true);
+        job.waitForCompletion(true);
 
-        System.exit(result?0:1);
+        //System.exit(result?0:1);
 
     }
 }

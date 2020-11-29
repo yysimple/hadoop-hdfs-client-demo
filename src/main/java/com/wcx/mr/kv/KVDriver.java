@@ -25,6 +25,12 @@ public class KVDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         args = new String[]{"E:\\test\\hadoop\\kv\\input", "E:\\test\\hadoop\\kv\\output"};
         Configuration conf = new Configuration();
+        /**
+         * banzhang ni hao
+         * xihuan hadoop banzhang
+         *
+         * 以空格切割的话，banzhang <====>  ni hao, 切割后的第一个单词为key，后面的为value
+         */
         // 设置切割符
         conf.set(KeyValueLineRecordReader.KEY_VALUE_SEPERATOR, " ");
         // 1 获取job对象

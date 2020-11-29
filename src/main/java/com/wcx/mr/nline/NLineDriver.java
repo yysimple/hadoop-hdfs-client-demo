@@ -26,7 +26,7 @@ public class NLineDriver {
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration);
 
-        // 设置每个切片InputSplit中划分三条记录
+        // 设置每个切片InputSplit中划分三条记录（每行为一条记录）
         NLineInputFormat.setNumLinesPerSplit(job, 3);
 
         // 使用NLineInputFormat处理记录数

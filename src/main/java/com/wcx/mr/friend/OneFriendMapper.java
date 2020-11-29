@@ -35,6 +35,9 @@ public class OneFriendMapper extends Mapper<LongWritable, Text, Text, Text> {
             // B  <==> A
             // C  <==> A
             // 输出 <好友，人>
+            System.out.println("key: ==> " + friend);
+            System.out.println("values: ==>" + person);
+            System.out.println("---------------------------------------");
             context.write(new Text(friend), new Text(person));
         }
     }
